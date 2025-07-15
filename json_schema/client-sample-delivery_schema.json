@@ -112,6 +112,7 @@
             "width",
             "height",
             "article_area",
+            "ave",
             "ave_currency",
             "pdf_file_name",
             "language",

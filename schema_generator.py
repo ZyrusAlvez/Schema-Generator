@@ -6,6 +6,8 @@ from jsonschema import Draft7Validator
 # ✅ All fields are marked as "required"
 # ✅ All fields must not be null (unless in allow_null_fields)
 
+import json
+
 def json_to_schema(
     json_str,
     optional_fields=None,
@@ -35,8 +37,16 @@ def json_to_schema(
             base_type = {"type": "number"}
         elif isinstance(value, list):
             base_type = {"type": "array"}
-            if value:
-                base_type["items"] = infer_type(None, value[0], current_path)
+            item_schemas = []
+            for item in value:
+                item_schema = infer_type(None, item, current_path)
+                if item_schema and item_schema not in item_schemas:
+                    item_schemas.append(item_schema)
+            if item_schemas:
+                if len(item_schemas) == 1:
+                    base_type["items"] = item_schemas[0]
+                else:
+                    base_type["items"] = {"anyOf": item_schemas}
         elif isinstance(value, dict):
             props, reqs = {}, []
             for k, v in value.items():

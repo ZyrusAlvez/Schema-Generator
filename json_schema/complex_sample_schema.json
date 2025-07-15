@@ -1,0 +1,453 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "system": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "created_by": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "notes": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "created_by",
+            "created_at",
+            "tags",
+            "notes"
+          ]
+        },
+        "status": {
+          "type": "object",
+          "properties": {
+            "online": {
+              "type": "boolean"
+            },
+            "uptime_hours": {
+              "type": "number"
+            },
+            "maintenance": {
+              "type": "object",
+              "properties": {
+                "scheduled": {
+                  "type": "boolean"
+                },
+                "history": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string"
+                      },
+                      "duration_minutes": {
+                        "type": "number"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "date",
+                      "duration_minutes",
+                      "type"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "scheduled",
+                "history"
+              ]
+            }
+          },
+          "required": [
+            "online",
+            "uptime_hours",
+            "maintenance"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "metadata",
+        "status"
+      ]
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "config": {
+                "type": "object",
+                "properties": {
+                  "methods": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "settings": {
+                    "type": "object",
+                    "properties": {
+                      "otp_timeout": {
+                        "type": "number"
+                      },
+                      "sso_provider": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "otp_timeout",
+                      "sso_provider"
+                    ]
+                  }
+                },
+                "required": [
+                  "methods",
+                  "settings"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "config"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "config": {
+                "type": "object",
+                "properties": {
+                  "providers": {
+                    "type": "array",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "region": {
+                              "type": "string"
+                            },
+                            "buckets": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "region",
+                            "buckets"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "region": {
+                              "type": "string"
+                            },
+                            "buckets": {
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "region",
+                            "buckets"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "redundancy": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "providers",
+                  "redundancy"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "config"
+            ]
+          }
+        ]
+      }
+    },
+    "users": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "profile": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "roles": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "settings": {
+                    "type": "object",
+                    "properties": {
+                      "dark_mode": {
+                        "type": "boolean"
+                      },
+                      "language": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "dark_mode",
+                      "language"
+                    ]
+                  }
+                },
+                "required": [
+                  "name",
+                  "roles",
+                  "settings"
+                ]
+              },
+              "activity": {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "event": {
+                          "type": "string"
+                        },
+                        "timestamp": {
+                          "type": "string"
+                        },
+                        "ip": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "event",
+                        "timestamp",
+                        "ip"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "event": {
+                          "type": "string"
+                        },
+                        "timestamp": {
+                          "type": "string"
+                        },
+                        "changes": {
+                          "type": "object",
+                          "properties": {
+                            "field": {
+                              "type": "string"
+                            },
+                            "old": {
+                              "type": "string"
+                            },
+                            "new": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "field",
+                            "old",
+                            "new"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "event",
+                        "timestamp",
+                        "changes"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "profile",
+              "activity"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "profile": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "roles": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "settings": {
+                    "type": "null"
+                  }
+                },
+                "required": [
+                  "name",
+                  "roles",
+                  "settings"
+                ]
+              },
+              "activity": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "event": {
+                      "type": "string"
+                    },
+                    "timestamp": {
+                      "type": "string"
+                    },
+                    "logs_accessed": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "event",
+                    "timestamp",
+                    "logs_accessed"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "profile",
+              "activity"
+            ]
+          }
+        ]
+      }
+    },
+    "logs": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "timestamp": {
+              "type": "string"
+            },
+            "level": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "timestamp",
+            "level",
+            "message"
+          ]
+        }
+      }
+    },
+    "flags": {
+      "type": "object",
+      "properties": {
+        "beta": {
+          "type": "boolean"
+        },
+        "features_enabled": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deprecated_features": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "beta",
+        "features_enabled",
+        "deprecated_features"
+      ]
+    },
+    "notes": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "system",
+    "modules",
+    "users",
+    "logs",
+    "flags",
+    "notes"
+  ]
+}
