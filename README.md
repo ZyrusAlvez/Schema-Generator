@@ -1,6 +1,6 @@
 # Schema Generator
 
-A Python module for automatically generating JSON schemas from JSON data and validating JSON objects against those schemas.
+A Python module for automatically generating JSON schemas from JSON data and validating JSON objects against those schemas. This tool is designed for internal use as an integration module.
 
 ## Features
 
@@ -8,16 +8,35 @@ A Python module for automatically generating JSON schemas from JSON data and val
 - **Flexible Configuration**: Support for optional fields, nullable fields, and field exclusion
 - **Batch Processing**: Process multiple JSON files using a single configuration file
 - **Schema Validation**: Validate JSON objects against generated schemas
+- **Custom Field Handling**: Fine-grained control over field requirements and types
 
-## Installation
+## Main Functions
 
-Ensure you have the `schema_generator` module available in your Python environment. The module provides two main functions:
+The `schema_generator` module provides two main functions:
 - `json_to_schema()`: Generates a JSON schema from a JSON object
 - `json_validator()`: Validates a JSON object against a schema
 
 ## Usage
 
-### Basic Integration
+### Simple Integration (In-Memory)
+
+```python
+from schema_generator import json_to_schema, json_validator
+
+# Simple data object
+data = {
+    "is_admin": True,
+    "notifications_enabled": False
+}
+
+# Generate schema from data
+schema = json_to_schema(data)
+
+# Validate data against generated schema
+print(json_validator(data, schema))  # Output: True
+```
+
+### Basic Integration with JSON Files
 
 ```python
 from schema_generator import json_to_schema, json_validator
