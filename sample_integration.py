@@ -11,13 +11,13 @@ for config in configs:
     allow_null_fields = config.get("allow_null_fields", [])
     exclude_fields = config.get("exclude_fields", [])
 
-    # Load JSON data
+    # Load JSON data as object
     with open(f"json/{json_file}.json", "r", encoding="utf-8") as f:
-        json_string = f.read()
+        json_obj = json.load(f)
 
     # Generate schema
     schema = json_to_schema(
-        json_string,
+        json_obj,
         optional_fields=optional_fields,
         allow_null_fields=allow_null_fields,
         exclude_fields=exclude_fields
@@ -28,7 +28,4 @@ for config in configs:
         json.dump(schema, f, indent=2)
 
     # Validate JSON against schema
-    with open(f"json_schema/{json_file}_schema.json", "r", encoding="utf-8") as f:
-        json_schema = f.read()
-
-    print(f"{json_file}: {json_validator(json_string, json_schema)}")
+    print(f"{json_file}: {json_validator(json_obj, schema)}")

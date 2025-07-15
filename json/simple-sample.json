@@ -1,0 +1,8 @@
+{
+  "is_admin": true,
+  "notifications_enabled": false,
+  "user": {
+    "active": true,
+    "banned": false
+  }
+}

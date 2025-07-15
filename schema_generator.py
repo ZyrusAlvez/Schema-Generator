@@ -6,10 +6,8 @@ from jsonschema import Draft7Validator
 # ✅ All fields are marked as "required"
 # ✅ All fields must not be null (unless in allow_null_fields)
 
-import json
-
 def json_to_schema(
-    json_str,
+    json_obj,
     optional_fields=None,
     allow_null_fields=None,
     exclude_fields=None
@@ -17,11 +15,6 @@ def json_to_schema(
     optional_fields = set(optional_fields or [])
     allow_null_fields = set(allow_null_fields or [])
     exclude_fields = set(exclude_fields or [])
-
-    try:
-        json_data = json.loads(json_str)
-    except json.JSONDecodeError as e:
-        raise ValueError(f"Invalid JSON string: {e}")
 
     def infer_type(key, value, path=""):
         current_path = f"{path}.{key}" if path and key else key or path
@@ -70,7 +63,7 @@ def json_to_schema(
 
     properties = {}
     required_fields = []
-    for k, v in json_data.items():
+    for k, v in json_obj.items():
         inferred = infer_type(k, v)
         if inferred:
             properties[k] = inferred
@@ -88,20 +81,8 @@ def json_to_schema(
 
     return schema
 
-def json_validator(json_str, schema_str):
-    try:
-        json_obj = json.loads(json_str)
-    except json.JSONDecodeError as e:
-        print(f"❌ Invalid JSON string: {e}")
-        return False
-
-    try:
-        schema = json.loads(schema_str)
-    except json.JSONDecodeError as e:
-        print(f"❌ Invalid schema string: {e}")
-        return False
-
-    validator = Draft7Validator(schema)
+def json_validator(json_obj, schema_obj):
+    validator = Draft7Validator(schema_obj)
     errors = sorted(validator.iter_errors(json_obj), key=lambda e: e.path)
     if not errors:
         return True
