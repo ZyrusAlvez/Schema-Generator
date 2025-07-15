@@ -1,6 +1,11 @@
 import json
 from jsonschema import Draft7Validator
 
+# By default (if no arguments are passed):
+# ✅ All fields are included in "properties"
+# ✅ All fields are marked as "required"
+# ✅ All fields must not be null (unless in allow_null_fields)
+
 def json_to_schema(
     json_str,
     optional_fields=None,

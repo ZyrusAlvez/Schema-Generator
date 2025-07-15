@@ -1,0 +1,6 @@
+{
+  "json_file": "client-sample-delivery",
+  "optional_fields": ["clip.source_metadata.ave"],
+  "allow_null_fields": [],
+  "exclude_fields": []
+}
