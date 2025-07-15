@@ -1,0 +1,194 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "clip": {
+      "type": "object",
+      "properties": {
+        "supplier": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "processed_date": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "processed_date"
+          ]
+        },
+        "source_metadata": {
+          "type": "object",
+          "properties": {
+            "edition": {
+              "type": "string"
+            },
+            "publication_name": {
+              "type": "string"
+            },
+            "publication_date": {
+              "type": "string"
+            },
+            "page_section": {
+              "type": "string"
+            },
+            "page_numbers": {
+              "type": "string"
+            },
+            "word_count": {
+              "type": "number"
+            },
+            "article_id": {
+              "type": "string"
+            },
+            "origin_left": {
+              "type": "number"
+            },
+            "origin_top": {
+              "type": "number"
+            },
+            "width": {
+              "type": "number"
+            },
+            "height": {
+              "type": "number"
+            },
+            "article_area": {
+              "type": "number"
+            },
+            "ave": {
+              "type": "string"
+            },
+            "ave_currency": {
+              "type": "string"
+            },
+            "pdf_file_name": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string"
+            },
+            "circulation": {
+              "type": "string"
+            },
+            "content_type": {
+              "type": "string"
+            },
+            "publication_id": {
+              "type": "number"
+            },
+            "clip_pages": {
+              "type": "number"
+            },
+            "country": {
+              "type": "string"
+            },
+            "original_page_url": {
+              "type": "string"
+            },
+            "clipping_coordinates": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "required": [
+            "edition",
+            "publication_name",
+            "publication_date",
+            "page_section",
+            "page_numbers",
+            "word_count",
+            "article_id",
+            "origin_left",
+            "origin_top",
+            "width",
+            "height",
+            "article_area",
+            "ave_currency",
+            "pdf_file_name",
+            "language",
+            "circulation",
+            "content_type",
+            "publication_id",
+            "clip_pages",
+            "country",
+            "original_page_url",
+            "clipping_coordinates"
+          ]
+        },
+        "article": {
+          "type": "object",
+          "properties": {
+            "headline": {
+              "type": "string"
+            },
+            "body": {
+              "type": "object",
+              "properties": {
+                "p": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "p"
+              ]
+            },
+            "author": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "author": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "author"
+                ]
+              }
+            },
+            "hiddenbody": {
+              "type": "object",
+              "properties": {
+                "p": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "p"
+              ]
+            }
+          },
+          "required": [
+            "headline",
+            "body",
+            "author",
+            "hiddenbody"
+          ]
+        }
+      },
+      "required": [
+        "supplier",
+        "source_metadata",
+        "article"
+      ]
+    }
+  },
+  "required": [
+    "clip"
+  ]
+}
