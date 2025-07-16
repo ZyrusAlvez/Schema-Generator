@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "clip": {
+      "type": "object",
+      "properties": {
+        "supplier": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "processed_date": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "processed_date"
+          ]
+        },
+        "length": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "supplier",
+        "length"
+      ]
+    },
+    "approved": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "clip",
+    "approved"
+  ]
+}

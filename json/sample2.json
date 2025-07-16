@@ -1,0 +1,10 @@
+{
+  "clip": {
+    "supplier": {
+      "name": "Acme Corp",
+      "processed_date": "2025-01-01T00:00:00Z"
+    },
+    "length": 180
+  },
+  "approved": true
+}

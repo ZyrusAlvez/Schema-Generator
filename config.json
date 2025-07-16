@@ -16,5 +16,23 @@
     "optional_fields": ["user.active"],
     "allow_null_fields": [],
     "exclude_fields": []
+  },
+  {
+    "json_file": "sample1",
+    "optional_fields": [],
+    "allow_null_fields": [],
+    "exclude_fields": []
+  },
+  {
+    "json_file": "sample2",
+    "optional_fields": [],
+    "allow_null_fields": [],
+    "exclude_fields": []
+  },
+  {
+    "json_file": "sample3",
+    "optional_fields": [],
+    "allow_null_fields": [],
+    "exclude_fields": []
   }
 ]
