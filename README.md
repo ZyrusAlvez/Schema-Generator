@@ -8,7 +8,6 @@ A Python module for automatically generating JSON schemas from JSON data and val
 - **Flexible Configuration**: Support for optional fields, nullable fields, and field exclusion
 - **Batch Processing**: Process multiple JSON files using a single configuration file
 - **Schema Validation**: Validate JSON objects against generated schemas
-- **Custom Field Handling**: Fine-grained control over field requirements and types
 
 ## Main Functions
 
@@ -162,7 +161,7 @@ project/
 │   ├── example1_schema.json
 │   ├── example2_schema.json
 │   └── ...
-└── your_script.py
+└── schema_generator.py
 ```
 
 ## Example Configuration
@@ -194,7 +193,6 @@ The module handles standard JSON loading and processing errors. Ensure that:
 
 ## Integration Notes
 
-- This module is designed for internal use and integration into larger systems
 - Generated schemas follow JSON Schema specification
 - The tool processes files sequentially and provides validation feedback
 - Output schemas are saved with `_schema.json` suffix
