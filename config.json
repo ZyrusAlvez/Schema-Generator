@@ -1,0 +1,7 @@
+[
+  {
+    "json_file": "user_93",
+    "optional_fields": ["active"],
+    "allow_null_fields": []
+  }  
+]

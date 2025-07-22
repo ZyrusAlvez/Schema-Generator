@@ -13,25 +13,33 @@ os.makedirs(SCHEMA_DIR, exist_ok=True)
 
 # === Checksum Functions ===
 
-def extract_keys_from_json(obj):
+def extract_keys_from_json(obj, filename, configs):
+    # Get file-specific config
+    file_config = get_file_config(filename, configs)
+    optional_fields = set(file_config.get("optional_fields", [])) if file_config else set()
     keys = []
-    def recurse(o):
+
+    def recurse(o, path=""):
         if isinstance(o, dict):
             for k in sorted(o):
-                keys.append(k)
-                recurse(o[k])
+                full_key = f"{path}.{k}" if path else k
+                if full_key not in optional_fields:
+                    keys.append(full_key)
+                recurse(o[k], full_key)
         elif isinstance(o, list):
             for item in o:
-                recurse(item)
+                recurse(item, path)
+
     recurse(obj)
     return keys
+
 
 def generate_checksum_from_keys(key_list):
     key_str = json.dumps(sorted(key_list), separators=(',', ':'))
     return hashlib.sha256(key_str.encode()).hexdigest()
 
-def get_json_checksum(data):
-    keys = extract_keys_from_json(data)
+def get_json_checksum(data, filename, configs):
+    keys = extract_keys_from_json(data, filename, configs)
     return generate_checksum_from_keys(keys)
 
 # === Schema Generator ===
@@ -152,7 +160,7 @@ def process_json_file(filename, configs):
         return False
     
     # Generate checksum
-    checksum_id = get_json_checksum(json_data)
+    checksum_id = get_json_checksum(json_data, filename, configs)
     
     # Schema file path based on checksum ID
     schema_file_path = os.path.join(SCHEMA_DIR, f"{checksum_id}.json")
