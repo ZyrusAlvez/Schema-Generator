@@ -1,0 +1,6 @@
+<user>
+  <name>John</name>
+  <age>30</age>
+  <email>john@example.com</email>
+  <active>false</active>
+</user>

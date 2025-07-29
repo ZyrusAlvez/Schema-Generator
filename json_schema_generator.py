@@ -33,7 +33,6 @@ def extract_keys_from_json(obj, filename, configs):
     recurse(obj)
     return keys
 
-
 def generate_checksum_from_keys(key_list):
     key_str = json.dumps(sorted(key_list), separators=(',', ':'))
     return hashlib.sha256(key_str.encode()).hexdigest()
@@ -137,14 +136,14 @@ def load_config():
 def get_file_config(filename, configs):
     """Get configuration for a specific file"""
     for config in configs:
-        if config.get("json_file") == filename:
+        if config.get("file") == filename:
             return config
     return {}
 
 # === File Processing ===
 
 def process_json_file(filename, configs):
-    json_file_path = os.path.join(JSON_DIR, f"{filename}.json")
+    json_file_path = os.path.join(JSON_DIR, filename)
     
     # Get configuration for this file
     file_config = get_file_config(filename, configs)
@@ -207,8 +206,7 @@ def main():
     if os.path.exists(JSON_DIR):
         for file in os.listdir(JSON_DIR):
             if file.endswith('.json'):
-                filename = file[:-5]  # Remove .json extension
-                json_files.append(filename)
+                json_files.append(file)
     
     if not json_files:
         print(f"❌ No JSON files found in {JSON_DIR} directory")

@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <!-- Generated schema with checksum: 7b2c7006fe5bfc6419f77e6422016fba671acc80e42d0f812d0b8b9d8f4af184 -->
+  <xs:element name="user" type="userType"/>
+  <xs:complexType name="userType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1"/>
+      <xs:element name="age" type="xs:integer" minOccurs="1"/>
+      <xs:element name="email" type="xs:string" minOccurs="1"/>
+      <xs:element name="active" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

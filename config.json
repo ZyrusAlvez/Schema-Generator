@@ -1,7 +1,12 @@
 [
   {
-    "json_file": "user_93",
+    "file": "user_93.json",
     "optional_fields": ["active"],
+    "allow_null_fields": []
+  },
+  {
+    "file": "try.xml",
+    "optional_fields": ["user.active"],
     "allow_null_fields": []
   }  
 ]
