@@ -47,7 +47,8 @@ class XSDGenerator:
         - parent (etree.Element): The parent element in the XSD schema.
         """
         ns = "{http://www.w3.org/2001/XMLSchema}"
-        element_name = element.tag.split('}')[-1]
+        tag = element.tag() if callable(element.tag) else element.tag
+        element_name = str(tag).split('}')[-1]
         element_def = etree.SubElement(parent, f"{ns}element", name=element_name)
         
         if len(element) > 0 or len(element.attrib):

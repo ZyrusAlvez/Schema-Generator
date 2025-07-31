@@ -1,7 +1,7 @@
 [
   {
-    "file": "",
-    "optional_fields": [],
+    "file": "file_0.json",
+    "optional_fields": ["active"],
     "allow_null_fields": []
   }
 ]

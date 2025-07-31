@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="clip">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="supplier">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="processed_date" type="xs:dateTime"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="source_metadata">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="edition" type="xs:integer"/>
+              <xs:element name="publication_name" type="xs:string"/>
+              <xs:element name="publication_date" type="xs:date"/>
+              <xs:element name="page_section" type="xs:string"/>
+              <xs:element name="page_numbers" type="xs:integer"/>
+              <xs:element name="word_count" type="xs:integer"/>
+              <xs:element name="article_id" type="xs:string"/>
+              <xs:element name="origin_left" type="xs:integer"/>
+              <xs:element name="origin_top" type="xs:integer"/>
+              <xs:element name="width" type="xs:integer"/>
+              <xs:element name="height" type="xs:integer"/>
+              <xs:element name="article_area" type="xs:integer"/>
+              <xs:element name="ave" type="xs:decimal"/>
+              <xs:element name="ave_currency" type="xs:string"/>
+              <xs:element name="pdf_file_name" type="xs:string"/>
+              <xs:element name="language" type="xs:string"/>
+              <xs:element name="circulation" type="xs:string"/>
+              <xs:element name="content_type" type="xs:string"/>
+              <xs:element name="publication_id" type="xs:integer"/>
+              <xs:element name="clip_pages" type="xs:integer"/>
+              <xs:element name="country" type="xs:string"/>
+              <xs:element name="original_page_url" type="xs:string"/>
+              <xs:element name="clipping_coordinates">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="row" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="article">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="headline" type="xs:string"/>
+              <xs:element name="body">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                    <xs:element name="p" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="author">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="author" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="hiddenbody" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

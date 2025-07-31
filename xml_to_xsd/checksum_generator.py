@@ -5,10 +5,13 @@ def extract_elements_from_xml(root):
     elements = []
 
     def recurse(element, path=""):
-        tag_name = element.tag.split('}')[-1] if '}' in element.tag else element.tag
-        full_path = f"{path}.{tag_name}" if path else tag_name
+        tag_raw = element.tag
+        tag_text = tag_raw() if callable(tag_raw) else tag_raw
+        tag_str = str(tag_text)
+        tag_name = tag_str.split('}')[-1] if '}' in tag_str else tag_str
 
-        elements.append(full_path)  # capture tag path
+        full_path = f"{path}.{tag_name}" if path else tag_name
+        elements.append(full_path)
 
         for attr_name in sorted(element.attrib.keys()):
             attr_path = f"{full_path}@{attr_name}"
@@ -19,6 +22,8 @@ def extract_elements_from_xml(root):
 
     recurse(root)
     return elements
+
+
 
 
 def generate_checksum_from_elements(element_list):
