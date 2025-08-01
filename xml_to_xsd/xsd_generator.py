@@ -50,14 +50,25 @@ class XSDGenerator:
         tag = element.tag() if callable(element.tag) else element.tag
         element_name = str(tag).split('}')[-1]
         element_def = etree.SubElement(parent, f"{ns}element", name=element_name)
-        
-        if len(element) > 0 or len(element.attrib):
-            complex_type = etree.SubElement(element_def, f"{ns}complexType")
+
+        has_children = len(element) > 0
+        has_attributes = len(element.attrib) > 0
+        has_text = element.text is not None and element.text.strip() != ""
+
+        if has_children or has_attributes:
+            # Use mixed="true" only if text is present
+            complex_type_attrs = {}
+            if has_text:
+                complex_type_attrs["mixed"] = "true"
+
+            complex_type = etree.SubElement(element_def, f"{ns}complexType", **complex_type_attrs)
             sequence = etree.SubElement(complex_type, f"{ns}sequence")
+            
             for child in element:
                 self.process_element(child, sequence)
+
             for attr_name, attr_value in element.attrib.items():
                 attr_type = infer_type(attr_value)
                 etree.SubElement(complex_type, f"{ns}attribute", name=attr_name, type=attr_type)
         else:
-            element_def.set('type', infer_type(element.text))
+            element_def.set("type", infer_type(element.text))

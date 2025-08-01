@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <newsitem local_id="QkdtVZgBAJFrrx9bJc8l">
+        <language>EN</language>
+        <article_size>100</article_size>
+        <mediatype>print</mediatype>
+        <source id="210241" name="Townsville Bulletin" country="AU" accesstype="I"/>
+        <local_url>2102412025073001010101011.pdf</local_url>
+        <original_pdf><![CDATA[news-ftp/Townsville Bulletin_20250730_Townsville_Nation_11.pdf]]></original_pdf>
+        
+        <docdate local="2025-07-30T02:00:00" gmt="2025-07-30T02:00:00" />
+        <physical_position page="11" />
+        <logical_position value="NATION" type="section" />
+        <headline><![CDATA[Unity on guarding children]]></headline>
+        <story><![CDATA[The Coalition will back reforms to childcare introduced by the government in the wake of a series of alleged incidents at daycare centres.
+Opposition education spokesman Jonathon Duniam said â€œwe are calling on the government to act with haste to improve our broken childcare systemâ€.
+The childcare reform bill passed the lower house soon after and can pass the senate this week.
+The reforms were expedited after Melbourne childcare worker Joshua Dale Brown was charged with more than 70 offences, including sexual activity in the presence of a child under 16, sexual assault of a child under 16 and possessing child abuse material. He has yet to enter pleas.
+Labor's bill proposes to strip childcare centres of federal funding if they do not meet the National Quality Standards for safety and quality.
+Centres that put kids at risk are in danger of having their funding totally cut. Any illegal activity would also be grounds to lose public funding.
+Government staff will also be given the power to do unannounced spot-checks.
+Education ministers will meet in August to discuss a national register of early childhood educators. The state, territory and federal Attorney-Generals will also discuss working with children check reforms.]]></story>
+        <byline name="Blair Jackson" />
+    </newsitem>
+</xml>

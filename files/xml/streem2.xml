@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <newsitem local_id="R0dtVZgBAJFrrx9bas82">
+        <language>EN</language>
+        <article_size>40</article_size>
+        <mediatype>print</mediatype>
+        <source id="210241" name="Townsville Bulletin" country="AU" accesstype="I"/>
+        <local_url>2102412025073001010101011.pdf</local_url>
+        <original_pdf><![CDATA[news-ftp/Townsville Bulletin_20250730_Townsville_Nation_11.pdf]]></original_pdf>
+        
+        <docdate local="2025-07-30T02:00:00" gmt="2025-07-30T02:00:00" />
+        <physical_position page="11" />
+        <logical_position value="NATION" type="section" />
+        <headline><![CDATA[Debt relief a step closer]]></headline>
+        <story><![CDATA[The Albanese government's student debt-slashing bill has passed through the House of Representatives with support from the Coalition, after Sussan Ley confirmed the opposition would not stand in the way.
+Coalition support is crucial in the Senate, where Labor does not hold a majority and the Greens have threatened to stall it.
+Labor's Bill was central to its youth-focused re-election pitch.
+It would cut student debts by 20 per cent for some three million graduates, or wipe off about $5500 from the average debt.]]></story>
+        <byline />
+    </newsitem>
+</xml>

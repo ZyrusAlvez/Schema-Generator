@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="xml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="newsitem">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="language" type="xs:string"/>
+              <xs:element name="article_size" type="xs:string"/>
+              <xs:element name="mediatype" type="xs:string"/>
+              <xs:element name="source">
+                <xs:complexType>
+                  <xs:sequence/>
+                  <xs:attribute name="id" type="xs:integer"/>
+                  <xs:attribute name="name" type="xs:string"/>
+                  <xs:attribute name="country" type="xs:string"/>
+                  <xs:attribute name="accesstype" type="xs:string"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="local_url" type="xs:string"/>
+              <xs:element name="original_filename" type="xs:string"/>
+              <xs:element name="image" type="xs:string"/>
+              <xs:element name="docdate">
+                <xs:complexType>
+                  <xs:sequence/>
+                  <xs:attribute name="local" type="xs:dateTime"/>
+                  <xs:attribute name="gmt" type="xs:dateTime"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="physical_position">
+                <xs:complexType>
+                  <xs:sequence/>
+                  <xs:attribute name="page" type="xs:integer"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="logical_position">
+                <xs:complexType>
+                  <xs:sequence/>
+                  <xs:attribute name="value" type="xs:string"/>
+                  <xs:attribute name="type" type="xs:string"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="headline" type="xs:string"/>
+              <xs:element name="story" type="xs:string"/>
+              <xs:element name="byline">
+                <xs:complexType>
+                  <xs:sequence/>
+                  <xs:attribute name="name" type="xs:string"/>
+                  <xs:attribute name="email" type="xs:string"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="local_id" type="xs:string"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

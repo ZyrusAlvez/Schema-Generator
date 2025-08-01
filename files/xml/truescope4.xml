@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE retxml SYSTEM "http://www.retriever-info.com/RetXML/retxml_pub.dtd">
+<retxml>
+<newsitem local_id="k0jTV5gBAJFrrx9bECMQ">
+<language>EN</language>
+<mediatype>print</mediatype>
+<source id="680005" name="The Straits Times" country="SG" accesstype="I"/>
+<url>6800052025073001010101019.pdf</url>
+<pdf_url>6800052025073001010101019.pdf</pdf_url>
+
+<docdate local="2025-07-30T02:00:00" gmt="2025-07-30T02:00:00" />
+<physical_position page="19" />
+<logical_position value="BUSINESS  A" type="section" />
+<headline><![CDATA[ProsperUs to end its services in Singapore on Nov 30]]></headline>
+
+
+
+<story><![CDATA[Local digital trading platform ProsperUs, backed by global investment house CGS International, will end its services here on Nov 30.
+
+The platform, which allows users to trade investment products such as equities, exchange-traded funds (ETFs) and mutual funds, announced its exit on July 27.
+
+Mr Malcolm Koo, chief executive of CGS International Securities Singapore, said the move is part of a â€œstrategic business directionâ€ to consolidate offerings.
+
+â€œExisting users who want to continue trading with CGS International may transfer their holdings to CGS International's flagship trading platform, iTrade, or open an account on our new trading platform, UP... They may also transfer their holdings to brokerages operated by other firms,â€ he said.
+
+iTrade is an all-in-one platform aimed at seasoned investors who want to trade a broad range of assets - including equities, ETFs, mutual funds and bonds - across global markets.
+
+UP is designed for newer investors seeking to trade US, Singapore and Malaysia-listed stocks, including fractional trading of US and Bursa shares.
+
+â€œPrior to the announcement, we had already reached out to them to facilitate the process of new account openings and transfer and liquidation of their stock holdings, offering full support in their transitions,â€ Mr Koo said.
+
+ProsperUs also said in its notice that users will no longer be able to open new positions from Aug 11. All existing positions will be placed in â€œreduce-onlyâ€ mode, allowing them to sell or transfer their holdings, but not make further purchases.
+
+Clients have until Oct 17 to request a fee waiver for transfers. Standard charges will apply thereafter.
+
+Users will have until Oct 31 to close all open positions and sell any mutual fund units. Any remaining holdings will be closed or sold by CGS International from Nov 3.
+
+Withdrawals and transfer-out requests will be accepted until Nov 21, while the last day to download account statements and other documents from the platform is Nov 28.
+
+ProsperUs will be officially decommissioned on Nov 30.
+timgohsm@sph.com.sg]]></story>
+
+<byline name="Timothy Goh" />
+</newsitem>
+</retxml>
