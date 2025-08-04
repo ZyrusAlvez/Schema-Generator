@@ -4,7 +4,7 @@ import os
 
 # === Schema Generator ===
 
-def json_to_schema(json_obj, optional_fields=None, allow_null_fields=None, exclude_fields=None):
+def json_to_schema(json_obj, optional_fields=None, allow_null_fields=None, exclude_fields=None) -> dict:
     optional_fields = set(optional_fields or [])
     allow_null_fields = set(allow_null_fields or [])
     exclude_fields = set(exclude_fields or [])
@@ -91,10 +91,13 @@ def json_schema_generator(json_path, json_schema_path, config_file = None):
     filename = json_path.split("/")[-1]
     
     # Get configuration for this file
-    configs = load_config(config_file)
-    file_config = get_file_config(filename, configs)
-    optional_fields = file_config.get("optional_fields", [])
-    allow_null_fields = file_config.get("allow_null_fields", [])
+    optional_fields = []
+    allow_null_fields = []
+    if config_file:
+        configs = load_config(config_file)
+        file_config = get_file_config(filename, configs)
+        optional_fields = file_config.get("optional_fields", [])
+        allow_null_fields = file_config.get("allow_null_fields", [])
     
     # Load JSON
     try:
@@ -109,22 +112,24 @@ def json_schema_generator(json_path, json_schema_path, config_file = None):
     
     # Schema file path based on checksum ID
     schema_file_path = os.path.join(json_schema_path, f"{checksum_id}.json")
+    print(f"📄 JSON: {json_path} | 📁 Schema: {schema_file_path}")
+    
     try:
         with open(schema_file_path, "r", encoding="utf-8") as f:
             existing_schema = json.load(f)
-
-        return existing_schema
+            print("✅ Existing schema loaded.")
+            return existing_schema
         
-    # Generate new schema (only reached if no matching schema exists)
     except:
         schema_data = json_to_schema(json_data, optional_fields, allow_null_fields)
         schema_data["checksum_id"] = checksum_id
         
-        # Save new schema with checksum ID as filename
         try:
             with open(schema_file_path, "w", encoding="utf-8") as f:
                 json.dump(schema_data, f, indent=2)
+                print("✅ New schema generated and saved.")
         except Exception as e:
+            print(f"❌ Failed to write schema: {e}")
             return False
         
         return schema_data

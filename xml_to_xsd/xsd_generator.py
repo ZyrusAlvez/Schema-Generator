@@ -18,12 +18,14 @@ class XSDGenerator:
         """
         xml_tree, root = load_xml(xml_path)
         checksum = get_xml_checksum(root)
+        xsd_file_path = f"{xsd_path}/{checksum}.xsd"
+        print(f"📄 XML: {xml_path} | 📁 XSD: {xsd_file_path}")
 
         try:
             with open(f"{xsd_path}/{checksum}", "rb") as f:
                 existing_schema = etree.parse(f)
-
-            return existing_schema
+                print("✅ Existing schema loaded.")
+                return existing_schema
         except:
             if xml_tree is not None:
                 self.xsd = etree.Element("{http://www.w3.org/2001/XMLSchema}schema", nsmap=self.ns_map)
@@ -31,11 +33,13 @@ class XSDGenerator:
                 
                 xsd_str = etree.tostring(self.xsd, pretty_print=True, xml_declaration=True, encoding="UTF-8").decode()
 
-                with open(f"{xsd_path}/{checksum}.xsd", "w", encoding="utf-8") as f:
+                with open(xsd_file_path, "w", encoding="utf-8") as f:
                     f.write(xsd_str)
+                    print("✅ New schema generated and saved.")
 
                 return xsd_str
             else:
+                print("❌ Failed to parse XML.")
                 return "Failed to generate XSD schema."
 
     def process_element(self, element, parent):
@@ -56,7 +60,6 @@ class XSDGenerator:
         has_text = element.text is not None and element.text.strip() != ""
 
         if has_children or has_attributes:
-            # Use mixed="true" only if text is present
             complex_type_attrs = {}
             if has_text:
                 complex_type_attrs["mixed"] = "true"
