@@ -8,7 +8,7 @@ A powerful tool for automatically generating JSON Schemas and XSD (XML Schema De
 - **XML to XSD**: Generate XSD schema from XML files
 - **Checksum-based Caching**: Uses file checksums as filenames for rapid schema retrieval
 - **Built-in Validation**: Validates JSON/XML files against their generated schemas
-- **Configuration Support**: Customize schema generation with optional fields, nullable fields, and exclusions
+- **Configuration Support**: Customize schema generation with optional fields and nullable fields
 - **Batch Processing**: Process entire directories of files at once
 
 ## Project Structure
@@ -108,7 +108,6 @@ Create a `config.json` file to customize schema generation:
     "file": "products.json", 
     "optional_fields": ["description", "tags"],
     "allow_null_fields": ["discount_price"],
-    "exclude_fields": ["internal_id", "debug_info"]
   }
 ]
 ```
@@ -118,7 +117,6 @@ Create a `config.json` file to customize schema generation:
 - **`file`**: Target filename to apply configuration to
 - **`optional_fields`**: Array of field paths that should not be required
 - **`allow_null_fields`**: Array of field paths that can accept null values
-- **`exclude_fields`**: Array of field paths to exclude from schema generation
 
 Field paths support dot notation for nested objects (e.g., `"address.apartment"`).
 
@@ -233,4 +231,4 @@ Main class for XML to XSD conversion located in `xml_to_xsd/xsd_generator.py`.
 
 ## License
 
-This project is open source and available under the MIT License.
+This project is open source and available under the MIT License.e
