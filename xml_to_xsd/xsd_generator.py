@@ -22,10 +22,10 @@ class XSDGenerator:
         print(f"📄 XML: {xml_path} | 📁 XSD: {xsd_file_path}")
 
         try:
-            with open(f"{xsd_path}/{checksum}", "rb") as f:
+            with open(f"{xsd_path}/{checksum}.xsd", "rb") as f:
                 existing_schema = etree.parse(f)
                 print("✅ Existing schema loaded.")
-                return existing_schema
+                return etree.tostring(existing_schema, pretty_print=True, encoding="utf-8").decode()
         except:
             if xml_tree is not None:
                 self.xsd = etree.Element("{http://www.w3.org/2001/XMLSchema}schema", nsmap=self.ns_map)
