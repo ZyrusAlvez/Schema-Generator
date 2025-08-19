@@ -1,5 +1,5 @@
 import os
-from xml_to_xsd import XSDGenerator
+from xml_to_xsd.xsd_generator import generate_xsd
 from xml_to_xsd.xml_validator import xml_validator
 from json_to_schema.json_schema_generator import json_schema_generator
 from json_to_schema.json_validator import json_validator
@@ -25,8 +25,7 @@ def schema_generator(JSON_DIR, JSON_SCHEMA_DIR, XML_DIR, XSD_DIR, CONFIG_FILE):
                 xml_files.append(file)
 
     for filename in xml_files:
-        generator = XSDGenerator(CONFIG_FILE)
-        xsd_str = generator.generate_xsd(f"{XML_DIR}/{filename}", XSD_DIR)
+        xsd_str = generate_xsd(f"{XML_DIR}/{filename}", XSD_DIR)
         result = xml_validator(f"{XML_DIR}/{filename}", xsd_str)
 
 if __name__ == "__main__":

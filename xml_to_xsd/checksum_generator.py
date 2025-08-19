@@ -32,6 +32,7 @@ def generate_checksum_from_elements(element_list, optional_fields=None, allow_nu
     - optional_fields: Set of optional field paths
     - nullable_fields: Set of nullable field paths
     """
+    
     optional_fields = optional_fields or set()
     allow_null_fields = allow_null_fields or set()
     
@@ -43,13 +44,11 @@ def generate_checksum_from_elements(element_list, optional_fields=None, allow_nu
         # Add "1" suffix if element is optional
         if element in optional_fields:
             modified_element += "1"
-            print(element)
         # Add "0" suffix if element is nullable
         if element in allow_null_fields:
             modified_element += "0"
             
         modified_elements.append(modified_element)
-    print(modified_elements)
     element_str = json.dumps(sorted(modified_elements), separators=(',', ':'))
     return hashlib.sha256(element_str.encode()).hexdigest()
 
