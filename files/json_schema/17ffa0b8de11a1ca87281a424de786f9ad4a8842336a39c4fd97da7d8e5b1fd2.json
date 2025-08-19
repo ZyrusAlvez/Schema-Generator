@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "student": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "name",
+    "age",
+    "student"
+  ],
+  "checksum_id": "17ffa0b8de11a1ca87281a424de786f9ad4a8842336a39c4fd97da7d8e5b1fd2"
+}

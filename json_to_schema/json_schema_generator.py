@@ -108,7 +108,7 @@ def json_schema_generator(json_path, json_schema_path, config_file = None):
         return False
     
     # Generate checksum
-    checksum_id = get_json_checksum(json_data, optional_fields)
+    checksum_id = get_json_checksum(json_data, optional_fields, allow_null_fields)
     
     # Schema file path based on checksum ID
     schema_file_path = os.path.join(json_schema_path, f"{checksum_id}.json")

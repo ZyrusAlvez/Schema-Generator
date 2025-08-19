@@ -25,7 +25,7 @@ def schema_generator(JSON_DIR, JSON_SCHEMA_DIR, XML_DIR, XSD_DIR, CONFIG_FILE):
                 xml_files.append(file)
 
     for filename in xml_files:
-        generator = XSDGenerator()
+        generator = XSDGenerator(CONFIG_FILE)
         xsd_str = generator.generate_xsd(f"{XML_DIR}/{filename}", XSD_DIR)
         result = xml_validator(f"{XML_DIR}/{filename}", xsd_str)
 

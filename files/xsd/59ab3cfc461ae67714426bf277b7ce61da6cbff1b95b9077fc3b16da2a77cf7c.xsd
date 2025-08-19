@@ -6,7 +6,8 @@
         <xs:element name="newsitem" minOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="language" minOccurs="1" type="xs:string"/>
+              <xs:element name="language" minOccurs="0" type="xs:string"/>
+              <xs:element name="article_size" minOccurs="1" type="xs:string"/>
               <xs:element name="mediatype" minOccurs="1" type="xs:string"/>
               <xs:element name="source" minOccurs="1">
                 <xs:complexType>
@@ -17,7 +18,9 @@
                   <xs:attribute name="accesstype" type="xs:string"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="pdf_url" minOccurs="1" type="xs:string"/>
+              <xs:element name="local_url" minOccurs="1" type="xs:string"/>
+              <xs:element name="original_filename" minOccurs="1" type="xs:string"/>
+              <xs:element name="image" minOccurs="1" type="xs:string"/>
               <xs:element name="docdate" minOccurs="1">
                 <xs:complexType>
                   <xs:sequence/>
@@ -38,15 +41,13 @@
                   <xs:attribute name="type" type="xs:string"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="lettere" minOccurs="1" type="xs:string"/>
               <xs:element name="headline" minOccurs="1" type="xs:string"/>
-              <xs:element name="preintro" minOccurs="1" type="xs:string"/>
               <xs:element name="story" minOccurs="1" type="xs:string"/>
               <xs:element name="byline" minOccurs="1">
                 <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="fulltext" minOccurs="1" type="xs:string"/>
-                  </xs:sequence>
+                  <xs:sequence/>
+                  <xs:attribute name="name" type="xs:string"/>
+                  <xs:attribute name="email" type="xs:string"/>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>

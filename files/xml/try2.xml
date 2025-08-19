@@ -1,0 +1,18 @@
+<company>
+  <employee>
+    <id>101</id>
+    <name>John Doe</name>
+    <department>
+      <name>Engineering</name>
+      <location>Building A</location>
+    </department>
+  </employee>
+  <employee>
+    <id>102</id>
+    <name>Jane Smith</name>
+    <department>
+      <name>HR</name>
+      <location>Building B</location>
+    </department>
+  </employee>
+</company>

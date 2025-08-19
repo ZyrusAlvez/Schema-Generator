@@ -1,7 +1,22 @@
 [
   {
-    "file": "file_0.json",
-    "optional_fields": ["active"],
+    "file": "try2.json",
+    "optional_fields": [],
+    "allow_null_fields": ["age"]
+  },
+  {
+    "file": "try.xml",
+    "optional_fields": ["library.book.title"],
+    "allow_null_fields": []
+  },
+  {
+    "file": "try2.xml",
+    "optional_fields": ["company.employee.name"],
+    "allow_null_fields": []
+  },
+  {
+    "file": "nama3.xml",
+    "optional_fields": ["xml.newsitem.language"],
     "allow_null_fields": []
   }
 ]

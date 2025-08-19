@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="library">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="book" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="title" minOccurs="0" type="xs:string"/>
+              <xs:element name="author" minOccurs="1" type="xs:string"/>
+              <xs:element name="year" minOccurs="1" type="xs:integer"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="book" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="title" minOccurs="0" type="xs:string"/>
+              <xs:element name="author" minOccurs="1" type="xs:string"/>
+              <xs:element name="year" minOccurs="1" type="xs:integer"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

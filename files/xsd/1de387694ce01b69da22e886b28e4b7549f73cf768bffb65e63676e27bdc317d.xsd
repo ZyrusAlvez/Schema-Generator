@@ -3,13 +3,13 @@
   <xs:element name="xml">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="newsitem">
+        <xs:element name="newsitem" minOccurs="1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="language" type="xs:string"/>
-              <xs:element name="article_size" type="xs:integer"/>
-              <xs:element name="mediatype" type="xs:string"/>
-              <xs:element name="source">
+              <xs:element name="language" minOccurs="1" type="xs:string"/>
+              <xs:element name="article_size" minOccurs="1" type="xs:integer"/>
+              <xs:element name="mediatype" minOccurs="1" type="xs:string"/>
+              <xs:element name="source" minOccurs="1">
                 <xs:complexType>
                   <xs:sequence/>
                   <xs:attribute name="id" type="xs:integer"/>
@@ -18,33 +18,33 @@
                   <xs:attribute name="accesstype" type="xs:string"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="local_url" type="xs:string"/>
-              <xs:element name="original_pdf" type="xs:string"/>
-              <xs:element name="image" type="xs:string"/>
-              <xs:element name="docdate">
+              <xs:element name="local_url" minOccurs="1" type="xs:string"/>
+              <xs:element name="original_pdf" minOccurs="1" type="xs:string"/>
+              <xs:element name="image" minOccurs="1" type="xs:string"/>
+              <xs:element name="docdate" minOccurs="1">
                 <xs:complexType>
                   <xs:sequence/>
                   <xs:attribute name="local" type="xs:dateTime"/>
                   <xs:attribute name="gmt" type="xs:dateTime"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="physical_position">
+              <xs:element name="physical_position" minOccurs="1">
                 <xs:complexType>
                   <xs:sequence/>
                   <xs:attribute name="page" type="xs:integer"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="logical_position">
+              <xs:element name="logical_position" minOccurs="1">
                 <xs:complexType>
                   <xs:sequence/>
                   <xs:attribute name="value" type="xs:string"/>
                   <xs:attribute name="type" type="xs:string"/>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="headline" type="xs:string"/>
-              <xs:element name="subheadline" type="xs:string"/>
-              <xs:element name="story" type="xs:string"/>
-              <xs:element name="byline">
+              <xs:element name="headline" minOccurs="1" type="xs:string"/>
+              <xs:element name="subheadline" minOccurs="1" type="xs:string"/>
+              <xs:element name="story" minOccurs="1" type="xs:string"/>
+              <xs:element name="byline" minOccurs="1">
                 <xs:complexType>
                   <xs:sequence/>
                   <xs:attribute name="name" type="xs:string"/>

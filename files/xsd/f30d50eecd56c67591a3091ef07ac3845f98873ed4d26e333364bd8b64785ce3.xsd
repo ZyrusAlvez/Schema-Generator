@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="company">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="employee" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" minOccurs="1" type="xs:integer"/>
+              <xs:element name="name" minOccurs="0" type="xs:string"/>
+              <xs:element name="department" minOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" minOccurs="1" type="xs:string"/>
+                    <xs:element name="location" minOccurs="1" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="employee" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" minOccurs="1" type="xs:integer"/>
+              <xs:element name="name" minOccurs="0" type="xs:string"/>
+              <xs:element name="department" minOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" minOccurs="1" type="xs:string"/>
+                    <xs:element name="location" minOccurs="1" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
