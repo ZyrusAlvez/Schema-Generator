@@ -5,6 +5,11 @@
     "allow_null_fields": ["age"]
   },
   {
+    "file": "client.json",
+    "optional_fields": ["clip"],
+    "allow_null_fields": []
+  },
+  {
     "file": "try.xml",
     "optional_fields": ["library.book.title"],
     "allow_null_fields": []

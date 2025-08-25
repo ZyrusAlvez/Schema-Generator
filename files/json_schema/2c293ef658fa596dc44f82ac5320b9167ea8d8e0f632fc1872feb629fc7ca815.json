@@ -189,8 +189,5 @@
       ]
     }
   },
-  "required": [
-    "clip"
-  ],
-  "checksum_id": "c7d0d5fdfee92ca7f230e848273f143b3f5a00305c852971531e88d06605dcdf"
+  "checksum_id": "2c293ef658fa596dc44f82ac5320b9167ea8d8e0f632fc1872feb629fc7ca815"
 }
